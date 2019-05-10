@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import "public";
+//定义变量
+$size : 22px;
+
+
+
+//sass嵌套 ：
+#nav{
+    @extend .public;
+    ul{
+        padding: 0 10px;
+        margin-left: 10px;
+        li{
+            padding: 10px 20px;
+            float: left;
+            list-style: none;
+            &:hover{
+                background: red;
+            }
+            a{
+                color:black;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+    }
+}
+//导入public类
+#head{
+    @extend .public;
+}
+//定义一个类
+.public{
+    width: 1000px;
+    height: 200px;
+    background: red;
+    margin: 0 auto;
+}
+
+//使用@mixin定义一段代码块  -- 先定义  后使用
+@mixin comm($h:200px , $c:yellow){
+    width: 1000px;
+    height: $h;
+    background: $c;
+    margin: 0 auto;
+}
+
+#main{
+    @include comm( 300px , red );
+}
+
+
+$flag:false;
+@if( $flag ){
+    #box{
+        width: 900px;
+    }
+}@else{
+    #box{
+        width: 1900px;
+    }
+}
+
+p {  
+    @if 1 + 1 == 2 { border: 1px solid; }  
+    @if 5 < 3 { border: 2px dotted; } 
+    @if 5 >6 { border: 4px dotted; }  
+    @if null  { border: 3px double; } 
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i ; }    //   .item-1   .item-2  .item-3
+}
+@for $i from 1 to 3 {
+  .active-#{$i} { width: 2em * $i ; }    
+}

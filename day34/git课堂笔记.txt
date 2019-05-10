@@ -1,0 +1,58 @@
+﻿git操作
+1、创建一个需要被git管理的项目
+2、在项目目录下打开 git bash  或  打开cmd命令行
+在项目目录下  右键--git bash 
+3、初始化项目仓库   命令 ：  git init  
+4、查看当前项目下哪些文件被管理   命令 :   git status
+5、将项目下被管理的文件添加到git的本地服务器下
+命令 ：  
+	git add 文件名   一次添加一个文件
+	git add . 批量添加文件到git服务器下
+6、提交项目文件到 git服务器上
+命令 : git commit -m"日志描述"
+git提交时  需要提供账号和密码 ： 
+运行 git config --global user.email "11@qq.com" 提供email
+运行 git config --global user.name "name" 提供name  
+
+7、查看日志信息 
+命令 : git log
+
+8、回退到某一个操作 
+git reset --hard "前六位编码"
+
+9、恢复手动删除的文件
+git checkout 提交生成码 文件名
+
+分支操作 ： 
+查看分支 ： git branch 
+创建分支 :  git branch 分支名
+切换分支 ： git checkout 分支名
+将子分支的文件合并到master分支上 ， 先切换到master分支上 再合并
+git merge 分支名 
+
+git操作github
+1、在github上创建一个项目仓库
+2、克隆项目仓库到本地磁盘上  git clone 仓库路径    初始化项目仓库 
+3、切换 git bash操作的路径   .git版本库在哪个目录下，就在该目录下打开git bash
+4、向该目录中添加项目  提交项目  add  commit操作
+5、将本地git服务器上的项目推送到远端的github上
+命令 ：   git push -v origin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
